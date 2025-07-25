@@ -32,14 +32,13 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TSUtils = exports.TSESLint = exports.JSONSchema = exports.ESLintUtils = exports.ASTUtils = void 0;
-exports.ASTUtils = __importStar(require("./ast-utils"));
-exports.ESLintUtils = __importStar(require("./eslint-utils"));
-exports.JSONSchema = __importStar(require("./json-schema"));
-exports.TSESLint = __importStar(require("./ts-eslint"));
-__exportStar(require("./ts-estree"), exports);
-exports.TSUtils = __importStar(require("./ts-utils"));
+exports.PatternMatcher = void 0;
+const eslintUtils = __importStar(require("@eslint-community/eslint-utils"));
+/**
+ * The class to find a pattern in strings as handling escape sequences.
+ * It ignores the found pattern if it's escaped with `\`.
+ *
+ * @see {@link https://eslint-community.github.io/eslint-utils/api/ast-utils.html#patternmatcher-class}
+ */
+exports.PatternMatcher = eslintUtils.PatternMatcher;

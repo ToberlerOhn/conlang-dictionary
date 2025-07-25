@@ -1,4 +1,5 @@
 "use strict";
+/* eslint-disable @typescript-eslint/no-namespace */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -32,14 +33,11 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TSUtils = exports.TSESLint = exports.JSONSchema = exports.ESLintUtils = exports.ASTUtils = void 0;
-exports.ASTUtils = __importStar(require("./ast-utils"));
-exports.ESLintUtils = __importStar(require("./eslint-utils"));
-exports.JSONSchema = __importStar(require("./json-schema"));
-exports.TSESLint = __importStar(require("./ts-eslint"));
-__exportStar(require("./ts-estree"), exports);
-exports.TSUtils = __importStar(require("./ts-utils"));
+exports.Scope = void 0;
+const scopeManager = __importStar(require("@typescript-eslint/scope-manager"));
+var Scope;
+(function (Scope) {
+    Scope.ScopeType = scopeManager.ScopeType;
+    Scope.DefinitionType = scopeManager.DefinitionType;
+})(Scope || (exports.Scope = Scope = {}));

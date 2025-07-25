@@ -32,14 +32,17 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TSUtils = exports.TSESLint = exports.JSONSchema = exports.ESLintUtils = exports.ASTUtils = void 0;
-exports.ASTUtils = __importStar(require("./ast-utils"));
-exports.ESLintUtils = __importStar(require("./eslint-utils"));
-exports.JSONSchema = __importStar(require("./json-schema"));
-exports.TSESLint = __importStar(require("./ts-eslint"));
-__exportStar(require("./ts-estree"), exports);
-exports.TSUtils = __importStar(require("./ts-utils"));
+exports.ReferenceTracker = void 0;
+/* eslint-disable @typescript-eslint/no-namespace */
+const eslintUtils = __importStar(require("@eslint-community/eslint-utils"));
+const ReferenceTrackerREAD = eslintUtils.ReferenceTracker.READ;
+const ReferenceTrackerCALL = eslintUtils.ReferenceTracker.CALL;
+const ReferenceTrackerCONSTRUCT = eslintUtils.ReferenceTracker.CONSTRUCT;
+const ReferenceTrackerESM = eslintUtils.ReferenceTracker.ESM;
+/**
+ * The tracker for references. This provides reference tracking for global variables, CommonJS modules, and ES modules.
+ *
+ * @see {@link https://eslint-community.github.io/eslint-utils/api/scope-utils.html#referencetracker-class}
+ */
+exports.ReferenceTracker = eslintUtils.ReferenceTracker;
